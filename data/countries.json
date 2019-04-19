@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Rwanda",
+        "iso2": "rw",
+        "dialCode": "250",
+        "priority": 0,
+        "areaCodes": null
+    },
+    {
+        "name": "Uganda",
+        "iso2": "ug",
+        "dialCode": "256",
+        "priority": 0,
+        "areaCodes": null
+    }
+]
