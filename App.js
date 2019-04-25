@@ -37,6 +37,8 @@ import Contribute from './screens/Fundrising/contribute';
 import Myloans from './screens/Savings/myLoans';
 import LoanConfirm from './screens/Savings/loanConfirm';
 import LoanRequest from './screens/Savings/loanRequest';
+import LoanDetails from './screens/Savings/LoanDetails';
+import LoanPay from './screens/Savings/LoanPay';
 import createGroup from './screens/Savings/createGroup';
 const TopLevelNavigator = createStackNavigator({
     Terms: Terms,
@@ -318,6 +320,26 @@ const TopLevelNavigator = createStackNavigator({
         }
       })
     },
+    LoanDetails:{
+      screen : LoanDetails,
+      navigationOptions: () => ({
+        title: 'Loans Detail',
+        headerTintColor : '#fff',
+        headerStyle : {
+          backgroundColor: '#f39400',
+        }
+      })
+    },
+    LoanPay:{
+      screen : LoanPay,
+      navigationOptions: () => ({
+        title: 'Loans Payment',
+        headerTintColor : '#fff',
+        headerStyle : {
+          backgroundColor: '#f39400',
+        }
+      })
+    },
     LoanConfirm:{
       screen : LoanConfirm,
       navigationOptions: () => ({
@@ -353,7 +375,7 @@ const TopLevelNavigator = createStackNavigator({
     },
 },
 {
-  initialRouteName : 'LockScreen'
+  initialRouteName : 'LoanDetails'
 });
 if (Platform.OS === "android") {
   // removes extra space at top of header on android

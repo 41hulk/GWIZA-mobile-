@@ -26,7 +26,7 @@ export default class Loans  extends Component {
       <Container>
         <Content>
           <View style={styles.cardWrapper}>
-            <TouchableOpacity onPress={()=>NavigationService.navigate('')}>  
+            <TouchableOpacity onPress={()=>NavigationService.navigate('LoanDetails')}>  
               <Card style={styles.gridStyle}>
                 <CardItem>
                   <Left>
@@ -43,7 +43,7 @@ export default class Loans  extends Component {
                 </CardItem>
               </Card>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>NavigationService.navigate('')}>  
+            <TouchableOpacity onPress={()=>NavigationService.navigate('LoanDetails')}>  
               <Card style={styles.gridStyle}>
                 <CardItem>
                   <Left>
@@ -60,7 +60,7 @@ export default class Loans  extends Component {
                 </CardItem>
               </Card>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>NavigationService.navigate('')}>  
+            <TouchableOpacity onPress={()=>NavigationService.navigate('LoanDetails')}>  
               <Card style={styles.gridStyle}>
                 <CardItem>
                   <Left>
@@ -77,7 +77,7 @@ export default class Loans  extends Component {
                 </CardItem>
               </Card>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>NavigationService.navigate('')}>  
+            <TouchableOpacity onPress={()=>NavigationService.navigate('LoanDetails')}>  
               <Card style={styles.gridStyle}>
                 <CardItem>
                   <Left>
