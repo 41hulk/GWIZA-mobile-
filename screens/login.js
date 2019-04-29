@@ -57,12 +57,10 @@ const styles = StyleSheet.create({
     position:'relative',
   },
   logo:{
-    width:400,
-    height:200,
     justifyContent:'center',
     alignItems:'center',
-    paddingTop:40,
-    paddingBottom:40,
+    paddingTop:30,
+    paddingBottom:30,
   },
   signupSection:{
     color:'#fff',
@@ -77,6 +75,7 @@ const styles = StyleSheet.create({
     position:'absolute',
     top:120,
     left:0,
+    right:0,
   },
   logoText:{
     flex:1,

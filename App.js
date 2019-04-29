@@ -375,7 +375,7 @@ const TopLevelNavigator = createStackNavigator({
     },
 },
 {
-  initialRouteName : 'LoanDetails'
+  initialRouteName : 'LockScreen'
 });
 if (Platform.OS === "android") {
   // removes extra space at top of header on android
