@@ -40,18 +40,20 @@ export default class Home extends Component {
               />
             <Text style ={styles.userName}>Duterimbere</Text>
           </Body>
-          <Grid style={styles.stats}>
+          <View>
+            <Grid style={styles.stats}>
               <Row style={styles.firstRow}>
                 <Col style={styles.columnTop1}>
                   <Text style= {styles.IconTextWhite}>2,400,000</Text>
-                  <Text style= {styles.IconTextWhite}>Savings Balance</Text>
+                  <Text style= {styles.IconTitleWhite}>Savings Balance</Text>
                 </Col>
                 <Col style={styles.columnTop2}>
                   <Text style= {styles.IconTextWhite}>200,000</Text>
-                  <Text style= {styles.IconTextWhite}>Loans Balance</Text>
+                  <Text style= {styles.IconTitleWhite}>Loans Balance</Text>
                 </Col>
               </Row>
             </Grid>
+          </View>
         </View>
         <Content>
           <Grid>
@@ -117,15 +119,23 @@ const styles = StyleSheet.create({
     paddingBottom:30,
   },
   stats:{
-    width:null,
     position:'relative',
-    flex:1,
+    flex:0,
     marginTop:120,
   },
   IconTextWhite:{
     fontSize:16,
     fontWeight:'500',
     color:'#fff',
+    flex:1,
+    top:10,
+    position:'absolute'
+  },
+  IconTitleWhite:{
+    top:30,
+    flex:1,
+    color:'#fff',
+    position:'absolute'
   },
   column1:{
     alignItems: 'center',

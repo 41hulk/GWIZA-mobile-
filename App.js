@@ -375,7 +375,7 @@ const TopLevelNavigator = createStackNavigator({
     },
 },
 {
-  initialRouteName : 'LockScreen'
+  initialRouteName : 'singleSaving'
 });
 if (Platform.OS === "android") {
   // removes extra space at top of header on android
