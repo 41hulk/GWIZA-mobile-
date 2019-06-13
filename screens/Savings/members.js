@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet,Image, NativeModules, processColor,TouchableHighlight,Animated,ScrollView}  from 'react-native';
-import { Container, Header, Content,List, ListItem,Root,Separator, Left, Button, View,Item,Icon,Input,ActionSheet, Body, Text} from 'native-base';
+import { Container, Header, Content,List, ListItem,Root,Separator, Left, Button, View,Item,Icon,Input,ActionSheet,Badge, Body, Text, Right} from 'native-base';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import {createIconSetFromFontello, OcticonIcon,MaterialIcons, FontAwesome,Foundation,Entypo,EvilIcon,Feather,IoniconFontAwesome, SimpleLineIcons,Ionicons
 } from '@expo/vector-icons';
@@ -48,11 +48,26 @@ export default class Members extends Component {
                   buttonIndex => {
                     this.setState({ clicked: BUTTONS[buttonIndex] });
                   }
-                )}>
+                )} avatar>
+                <Left>
+                    <MaterialInitials
+                        style={styles.initial}
+                        backgroundColor={'orange'}
+                        color={'white'}
+                        size={40}
+                        text={'Patrick'}
+                        single={true}
+                    />
+                </Left>
                 <Body>
                   <Text>Bobson Rugamba</Text>
                   <Text note>+25078892732</Text>
                 </Body>
+                <Right>
+                <Badge success>
+                  <Text>Admin</Text>
+                </Badge>
+                </Right>
               </ListItem>
             </List>
             <List>
@@ -66,27 +81,19 @@ export default class Members extends Component {
                   buttonIndex => {
                     this.setState({ clicked: BUTTONS[buttonIndex] });
                   }
-                )}>
+                )} avatar>
+                <Left>
+                    <MaterialInitials
+                        style={styles.initial}
+                        backgroundColor={'blue'}
+                        color={'white'}
+                        size={40}
+                        text={'Elyse'}
+                        single={true}
+                    />
+                </Left>
                 <Body>
                   <Text>Elyse Confiance</Text>
-                  <Text note>+25078892732</Text>
-                </Body>
-              </ListItem>
-            </List>
-            <List>
-              <ListItem onPress={() =>
-                ActionSheet.show(
-                  {
-                    options: BUTTONS,
-                    cancelButtonIndex: CANCEL_INDEX,
-                    destructiveButtonIndex: DESTRUCTIVE_INDEX,
-                  },
-                  buttonIndex => {
-                    this.setState({ clicked: BUTTONS[buttonIndex] });
-                  }
-                )}>
-                <Body>
-                  <Text>Jimmy Rutabingwa</Text>
                   <Text note>+25078892732</Text>
                 </Body>
               </ListItem>
