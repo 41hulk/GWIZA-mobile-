@@ -96,7 +96,7 @@ export default class Loans  extends Component {
             </TouchableOpacity>
           </View>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

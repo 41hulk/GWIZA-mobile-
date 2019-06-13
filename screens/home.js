@@ -53,30 +53,28 @@ export default class Home extends React.Component {
                 <Text style ={styles.Balance}>‭+250 788 305 200‬</Text>
               </Body>
         </View>
-        <Content>
-          <Grid>
-            <Row style={styles.firstRow}>
-              <Col style={styles.column1}>
-                <GwizaIcon name='002-save-money' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Savings')}/>
-                <Text style= {styles.IconText}>Savings</Text>
-              </Col>
-              <Col style={styles.column2}>
-              <GwizaIcon name='022-pay-1' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Paybills')}/>
-                <Text style= {styles.IconText}>Pay Bills</Text>
-              </Col>
-            </Row>
-            <Row style={styles.Row}>
-              <Col style={styles.column3}>
-              <GwizaIcon name='013-investment-3' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Investments')}/>
-                <Text style= {styles.IconText}>Investment</Text>
-              </Col>
-              <Col style={styles.column4}>
-                <GwizaIcon name='039-negotiation' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('funds')}/>
-                <Text style= {styles.IconText}>Fundraising</Text>
-              </Col>
-            </Row>
-          </Grid>
-        </Content>
+        <Grid>
+          <Row style={styles.firstRow}>
+            <Col style={styles.column1}>
+              <GwizaIcon name='002-save-money' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Savings')}/>
+              <Text style= {styles.IconText}>Savings</Text>
+            </Col>
+            <Col style={styles.column2}>
+            <GwizaIcon name='022-pay-1' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Paybills')}/>
+              <Text style= {styles.IconText}>Pay Bills</Text>
+            </Col>
+          </Row>
+          <Row style={styles.Row}>
+            <Col style={styles.column3}>
+            <GwizaIcon name='013-investment-3' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Investments')}/>
+              <Text style= {styles.IconText}>Investment</Text>
+            </Col>
+            <Col style={styles.column4}>
+              <GwizaIcon name='039-negotiation' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('funds')}/>
+              <Text style= {styles.IconText}>Fundraising</Text>
+            </Col>
+          </Row>
+        </Grid>
         <NavBottom/>
       </Container>
     );

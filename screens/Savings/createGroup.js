@@ -98,7 +98,7 @@ export default class History extends Component {
             </Button>
         </Form>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

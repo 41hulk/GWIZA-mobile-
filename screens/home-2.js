@@ -39,7 +39,7 @@ export default class Home2 extends React.Component {
         <Header androidStatusBarColor="#690002" iosBarStyle="light-content" style={{backgroundColor:'#f39400'}}>
             <Left>
                 <Button transparent>
-                    <Feather name="settings" size={22} style={{color:'#fff'}} onPress={() => this.props.navigation.navigate('Settings')}/>
+                    
                 </Button>
           </Left>
           <Body style={styles.header}>
@@ -53,116 +53,99 @@ export default class Home2 extends React.Component {
         </Header>
         <View style = {styles.profileSection}>
             <Body style={styles.userProfile}>
-                <UserAvatar size="80" name="Jimmy Ruta" />
+                <UserAvatar size="70" name="Jimmy Ruta" />
                 <Text style ={styles.userName}>Jimmy Ruta 
                 <Image style={styles.verifiedIcon} source={require('../assets/verified.png')}/> </Text>
                 <Text style ={styles.Balance}>‭+250 788 305 200‬</Text>
             </Body>
-            <Grid style={styles.features}>
-              <Row>
-                <Left style={styles.saveBtn}>
-                    <Button block light onPress={() => this.props.navigation.navigate('Savings')}>
-                        <GwizaIcon name='002-save-money'  style={styles.btnIcon}/>
-                        <Text style={styles.Featuretxt}> Savings</Text>
-                    </Button>
-                </Left>
-                <Right style={styles.fundBtn}>
-                    <Button block light onPress={() => this.props.navigation.navigate('Funds')}>
-                        <GwizaIcon name='039-negotiation'  style={styles.btnIcon}/>
-                        <Text style={styles.Featuretxt}> Fundrising</Text>
-                    </Button>
-                </Right>
-              </Row>
-            </Grid>
         </View>
         <Content>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='002-save-money' style={{fontSize:30}} onPress={() => this.props.navigation.navigate('Savings')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='039-negotiation' style={{fontSize:30}} onPress={() => this.props.navigation.navigate('funds')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='002-save-money'  style={{fontSize:30}} onPress={() => this.props.navigation.navigate('funds')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='039-negotiation' style={{fontSize:30}} onPress={() => this.props.navigation.navigate('funds')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='002-save-money' style={{fontSize:30}} onPress={() => this.props.navigation.navigate('funds')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='039-negotiation' style={{fontSize:30}} onPress={() => this.props.navigation.navigate('funds')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-            <ListItem avatar>
+            <ListItem avatar style={styles.TransList}>
                 <Left>
                     <GwizaIcon name='002-save-money' style={{fontSize:30}} onPress={() => this.props.navigation.navigate('funds')}/>
                 </Left>
                 <Body>
-                    <Text>Transaction Title</Text>
-                    <Text note>Due on 02/04/2019</Text>
+                    <Text style={styles.TransTitle}>Transaction Title</Text>
+                    <Text note style={styles.TransDate}>Due on 02/04/2019</Text>
                 </Body>
                 <Right>
                     <Text style={styles.TransAmount} note>50,000 Rwf</Text>
                 </Right>
             </ListItem>
-      
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }
@@ -179,9 +162,12 @@ const styles = StyleSheet.create({
   fundBtn:{
     paddingLeft:7.5,
   },
+  TransList:{
+    position:'relative',
+  },
   verifiedIcon:{
-    width:28,
-    height:28,
+    width:20,
+    height:20,
     paddingLeft:15,
   },  
   features:{
@@ -193,11 +179,6 @@ const styles = StyleSheet.create({
   Featuretxt:{
     fontSize:16,
     fontWeight:'bold',
-  },
-  TransAmount:{
-      color:'#000',
-      fontSize:14,
-      fontWeight:'bold',
   },
   logIcon:{
       alignItems: 'center',
@@ -211,6 +192,16 @@ const styles = StyleSheet.create({
     paddingBottom:12,
     fontSize:55,
     color:'#000',
+  },
+  TransAmount:{
+    color:'#000',
+    fontSize:14,
+  },
+  TransTitle:{
+    fontSize:14,
+  },
+  TransDate:{
+    fontSize:12,
   },
   firstRow:{
     borderColor:'#fff',
@@ -226,7 +217,7 @@ const styles = StyleSheet.create({
     fontWeight:'500',
   },
   Balance:{
-    fontSize:20,
+    fontSize:15,
     color:'#fff',
     textAlign:'center',
     paddingBottom:0,
@@ -238,10 +229,10 @@ const styles = StyleSheet.create({
   },
   logo:{
     flex:1,
-    top:-56,
+    top:-50,
     left:90,
-    width:112,
-    height:112,
+    width:100,
+    height:100,
     position:'absolute',
   },
   PageContent:{
@@ -255,18 +246,18 @@ const styles = StyleSheet.create({
     borderColor:'#fff',
   },
   userProfile:{
-    borderRadius:90/2,
     position:'absolute',
-    top:35,
+    paddingTop:45,
+    paddingBottom:45,
   },
   profileSection:{
     position:'relative',
-    paddingTop:45,
-    paddingBottom:30,
+    paddingTop:150,
+    paddingBottom:100,
     backgroundColor:'#ff9f00',
   },
   userName:{
-    fontSize:18,
+    fontSize:15,
     color:'#fff',
     textAlign:'center',
     paddingTop:10,

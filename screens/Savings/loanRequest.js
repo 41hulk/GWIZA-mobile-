@@ -56,7 +56,7 @@ export default class LoanRequest extends Component {
             </Button>
         </Form>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

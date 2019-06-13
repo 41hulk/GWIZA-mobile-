@@ -92,7 +92,7 @@ export default class Members extends Component {
               </ListItem>
             </List>
           </Content>
-          {/* <NavBottom/> */}
+          <NavBottom/>
         </Container>
       </Root>
       

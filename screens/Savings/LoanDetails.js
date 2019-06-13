@@ -93,14 +93,7 @@ export default class LoanDetails extends Component {
           </View>
             
         </Content>
-        <Footer>
-          <FooterTab style={{backgroundColor:'#ff9f00'}}>
-            <Button full onPress={()=>NavigationService.navigate('LoanPay')}>
-              <Text style={{color:'#fff',fontSize:14}}>Pay Now</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

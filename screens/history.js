@@ -120,7 +120,7 @@ export default class History extends Component {
               </Right>
             </ListItem>
             </Content>
-            {/* <NavBottom/> */}
+            <NavBottom/>
       </Container>
     );
   }

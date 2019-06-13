@@ -43,7 +43,7 @@ export default class LoanPay extends Component {
             </Button>
         </Form>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

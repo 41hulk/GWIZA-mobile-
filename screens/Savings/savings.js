@@ -33,32 +33,32 @@ export default class Savings extends Component {
     return (
       <Container>
           <Item style={styles.searchBar}>
-            <Icon name="ios-search" />
-            <Input placeholder="Search" />
+            <Icon name="ios-search" size={10}/>
+            <Input placeholder="Search" style={styles.searchText}/>
           </Item>
         <Content>
             <List>
                 <ListItem onPress={() => this.props.navigation.navigate('singleSaving')}>
                     <Body>
-                        <Text>Abadatsimburwa</Text>
-                        <Text note>is simply dummy text of the printing and typesetting industry.</Text>
+                        <Text style={styles.groupTitle}>Abadatsimburwa</Text>
+                        <Text note style={styles.GroupDesc}>is simply dummy text of the printing and typesetting industry.</Text>
                     </Body>
                 </ListItem>
                 <ListItem onPress={() => this.props.navigation.navigate('singleSaving')}>
                     <Body>
-                        <Text>Duterimbere</Text>
-                        <Text note>is simply dummy text of the printing and typesetting industry.</Text>
+                        <Text style={styles.groupTitle}>Duterimbere</Text>
+                        <Text note style={styles.GroupDesc}>is simply dummy text of the printing and typesetting industry.</Text>
                     </Body>
                 </ListItem>
                 <ListItem onPress={() => this.props.navigation.navigate('singleSaving')}>
                     <Body>
-                        <Text>Tuzagerayo</Text>
-                        <Text note>is simply dummy text of the printing and typesetting industry.</Text>
+                        <Text style={styles.groupTitle}>Tuzagerayo</Text>
+                        <Text note style={styles.GroupDesc}>is simply dummy text of the printing and typesetting industry.</Text>
                     </Body>
                 </ListItem>
             </List>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }
@@ -74,5 +74,15 @@ const styles = StyleSheet.create({
     searchBar:{
         paddingLeft:15,
         paddingRight:15,
+    },
+    groupTitle:{
+      fontSize:14,
+      fontWeight:'bold',
+    },
+    GroupDesc:{
+      fontSize:12,
+    },
+    searchText:{
+      fontSize:14,
     }
 });

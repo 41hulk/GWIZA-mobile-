@@ -188,6 +188,7 @@ const TopLevelNavigator = createStackNavigator({
         },
         headerRight: (
           <MaterialIcons name="done" size={25} style={styles.addIcon} onPress={()=>alert('Invest')}/>
+          
         ),
       }),
     },
@@ -327,7 +328,10 @@ const TopLevelNavigator = createStackNavigator({
         headerTintColor : '#fff',
         headerStyle : {
           backgroundColor: '#f39400',
-        }
+        },
+        headerRight:(
+          <MaterialIcons name="done" size={25} style={styles.addIcon} onPress={()=>NavigationService.navigate('LoanPay')}/>
+        )
       })
     },
     LoanPay:{

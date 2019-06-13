@@ -35,10 +35,10 @@ export default class Home extends Component {
               backgroundColor={'ed'}
               color={'white'}
               size={80}
-              text={'Duterimbere'}
+              text={'Amasezerano'}
               single={true}
               />
-            <Text style ={styles.userName}>Duterimbere</Text>
+            <Text style ={styles.userName}>Amasezerano</Text>
           </Body>
           <View>
             <Grid style={styles.stats}>
@@ -57,29 +57,61 @@ export default class Home extends Component {
         </View>
         <Content>
           <Grid>
-            <Row style={styles.firstRow}>
-              <Col style={styles.column1}>
-                <GwizaIcon name='004-investment-1' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Save')}/>
-                <Text style= {styles.IconText}>Save</Text>
+            <Row>
+              <Col>
+                <TouchableHighlight onPress={() => this.props.navigation.navigate('Save')}>
+                  <Card style={styles.gridStyle}>
+                      <CardItem>
+                        <Body style={styles.textIcon}>
+                          <GwizaIcon name='004-investment-1' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Save')}/>
+                          <Text style= {styles.IconText}>Save</Text>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                </TouchableHighlight>
               </Col>
-              <Col style={styles.column2}>
-              <GwizaIcon name='009-agreement' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Myloans')}/>
-                <Text style= {styles.IconText}>Borrows</Text>
+              <Col>
+                <TouchableHighlight onPress={() => this.props.navigation.navigate('Myloans')}>
+                  <Card style={styles.gridStyle}>
+                      <CardItem>
+                        <Body style={styles.textIcon}>
+                          <GwizaIcon name='009-agreement' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Myloans')}/>
+                        <Text style= {styles.IconText}>Borrows</Text>
+                        </Body>
+                      </CardItem>
+                  </Card>
+                </TouchableHighlight>
               </Col>
             </Row>
-            <Row style={styles.Row}>
-              <Col style={styles.column3}>
-              <GwizaIcon name='024-policy-1' style={styles.GridIcon}/>
-                <Text style= {styles.IconText}>My Account</Text>
+            <Row>
+              <Col>
+                <TouchableHighlight onPress={() => this.props.navigation.navigate('.')}>
+                  <Card style={styles.gridStyle}>
+                    <CardItem>
+                      <Body style={styles.textIcon}>
+                        <GwizaIcon name='024-policy-1' style={styles.GridIcon}/>
+                        <Text style= {styles.IconText}>My Account</Text>
+                      </Body>
+                    </CardItem>
+                  </Card>
+                </TouchableHighlight>
               </Col>
-              <Col style={styles.column4}>
-                <GwizaIcon name='017-community' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Members')}/>
-                <Text style= {styles.IconText}>Members</Text>
+              <Col>
+                <TouchableHighlight onPress={() => this.props.navigation.navigate('Members')}>
+                  <Card style={styles.gridStyle} onPress={() => this.props.navigation.navigate('Members')}>
+                      <CardItem>
+                        <Body style={styles.textIcon}>
+                          <GwizaIcon name='017-community' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Members')}/>
+                          <Text style= {styles.IconText}>Members</Text>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                </TouchableHighlight>
               </Col>
             </Row>
           </Grid>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }
@@ -89,10 +121,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent:'center',
     borderTopColor:'#ff9f00',
-    borderBottomColor:'#fff',
+    borderBottomColor:'#ff9f00',
     borderColor:'#eaeaea',
     borderRightColor:'#eaeaea',
-    borderWidth:0.5,
+    borderWidth:0,
     paddingTop:30,
     paddingBottom:30,
   },
@@ -100,31 +132,49 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent:'center',
     borderTopColor:'#ff9f00',
-    borderBottomColor:'#fff',
+    borderBottomColor:'#ff9f00',
     borderColor:'#eaeaea',
     borderRightColor:'#eaeaea',
     borderWidth:0.5,
     paddingTop:30,
     paddingBottom:30,
   },
-  columnTop3:{
+  textIcon:{
     alignItems: 'center',
     justifyContent:'center',
-    borderTopColor:'#ff9f00',
-    borderBottomColor:'#fff',
-    borderColor:'#eaeaea',
-    borderRightColor:'#eaeaea',
-    borderWidth:0.5,
-    paddingTop:30,
-    paddingBottom:30,
+  },
+  walletIcon:{
+    fontSize:30,
+    color:'#fff',
+  },
+  GridIcon:{
+    paddingBottom:12,
+    fontSize:70,
+    color:'#000',
   },
   stats:{
     position:'relative',
     flex:0,
     marginTop:120,
   },
+  gridStyle:{
+    padding:30,
+    borderWidth: 1,
+    borderRadius: 2,
+    borderColor:'#fff',
+    borderBottomWidth: 0,
+    shadowColor: '#d1e0fc',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 4,
+    marginLeft: 5,
+    marginRight: 5,
+    alignItems: 'center',
+    justifyContent:'center',
+  },
   IconTextWhite:{
-    fontSize:16,
+    fontSize:14,
     fontWeight:'500',
     color:'#fff',
     flex:1,
@@ -137,47 +187,13 @@ const styles = StyleSheet.create({
     color:'#fff',
     position:'absolute'
   },
-  column1:{
-    alignItems: 'center',
-    justifyContent:'center',
-    borderTopColor:'#fff',
-    borderBottomColor:'#fff',
-    borderColor:'#eaeaea',
-    borderLeftColor:'#eaeaea',
-    borderWidth:1,
-    paddingTop:35,
-    paddingBottom:35,
-  },
-  column2:{
-    alignItems: 'center',
-    justifyContent:'center',
-    paddingTop:35,
-    paddingBottom:35,
-  },
-  column3:{
-    alignItems: 'center',
-    justifyContent:'center',
-    borderTopColor:'#fff',
-    borderBottomColor:'#fff',
-    borderColor:'#eaeaea',
-    borderLeftColor:'#eaeaea',
-    borderWidth:1,
-    paddingTop:35,
-    paddingBottom:35,
-  },
-  column4:{
-    alignItems: 'center',
-    justifyContent:'center',
-    paddingTop:35,
-    paddingBottom:35,
-  },
   walletIcon:{
     fontSize:30,
     color:'#fff',
   },
   GridIcon:{
     paddingBottom:12,
-    fontSize:55,
+    fontSize:40,
     color:'#000',
   },
   firstRow:{
@@ -190,11 +206,14 @@ const styles = StyleSheet.create({
     color:'#fff',
   },
   IconText:{
-    fontSize:16,
+    fontSize:14,
+    flexWrap: 'wrap', 
+    alignItems: 'flex-start',
+    flexDirection:'row',
     fontWeight:'500',
   },
   Balance:{
-    fontSize:20,
+    fontSize:22,
     color:'#fff',
     textAlign:'center',
     paddingBottom:150,

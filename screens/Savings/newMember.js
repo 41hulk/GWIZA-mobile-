@@ -142,7 +142,7 @@ export default class FriendScreen extends Component {
            onEndReached={this.loadAsync}
         />
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     )
   }
