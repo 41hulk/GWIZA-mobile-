@@ -141,7 +141,7 @@ const TopLevelNavigator = createStackNavigator({
     singleSaving : {
       screen: singleSaving,
       navigationOptions: () => ({
-        title: 'Amasezerano',
+        title: 'World Relief',
         headerTintColor : '#fff',
         headerStyle : {
           backgroundColor: '#f39400',

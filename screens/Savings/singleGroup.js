@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet,Image, NativeModules, processColor,TouchableHighlight,Animated,ScrollView}  from 'react-native';
-import { Container, CardItem,Card,Left, Content, Button, View, Right, Body, Text} from 'native-base';
+import { Container, CardItem,Card,Left, Content, Button, View, Right, Body, Text,ListItem} from 'native-base';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import {createIconSetFromFontello, OcticonIcon,MaterialIcons, FontAwesome,Foundation,Entypo,EvilIcon,Feather,IoniconFontAwesome, SimpleLineIcons,Ionicons
 } from '@expo/vector-icons';
@@ -35,81 +35,50 @@ export default class Home extends Component {
               backgroundColor={'ed'}
               color={'white'}
               size={80}
-              text={'Amasezerano'}
+              text={'World Relief'}
               single={true}
-              />
-            <Text style ={styles.userName}>Amasezerano</Text>
+            />
+            <Text style ={styles.userName}>World Relief Group</Text>
+            <Text style ={styles.Balance}><Text style ={{fontSize:15,color:'#fff'}}>RWF</Text> 2,400,000</Text>
           </Body>
-          <View>
-            <Grid style={styles.stats}>
-              <Row style={styles.firstRow}>
-                <Col style={styles.columnTop1}>
-                  <Text style= {styles.IconTextWhite}>2,400,000</Text>
-                  <Text style= {styles.IconTitleWhite}>Savings Balance</Text>
-                </Col>
-                <Col style={styles.columnTop2}>
-                  <Text style= {styles.IconTextWhite}>200,000</Text>
-                  <Text style= {styles.IconTitleWhite}>Loans Balance</Text>
-                </Col>
-              </Row>
-            </Grid>
-          </View>
         </View>
         <Content>
-          <Grid>
-            <Row>
-              <Col>
-                <TouchableHighlight onPress={() => this.props.navigation.navigate('Save')}>
-                  <Card style={styles.gridStyle}>
-                      <CardItem>
-                        <Body style={styles.textIcon}>
-                          <GwizaIcon name='004-investment-1' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Save')}/>
-                          <Text style= {styles.IconText}>Save</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                </TouchableHighlight>
-              </Col>
-              <Col>
-                <TouchableHighlight onPress={() => this.props.navigation.navigate('Myloans')}>
-                  <Card style={styles.gridStyle}>
-                      <CardItem>
-                        <Body style={styles.textIcon}>
-                          <GwizaIcon name='009-agreement' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Myloans')}/>
-                        <Text style= {styles.IconText}>Borrows</Text>
-                        </Body>
-                      </CardItem>
-                  </Card>
-                </TouchableHighlight>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <TouchableHighlight onPress={() => this.props.navigation.navigate('.')}>
-                  <Card style={styles.gridStyle}>
-                    <CardItem>
-                      <Body style={styles.textIcon}>
-                        <GwizaIcon name='024-policy-1' style={styles.GridIcon}/>
-                        <Text style= {styles.IconText}>My Account</Text>
-                      </Body>
-                    </CardItem>
-                  </Card>
-                </TouchableHighlight>
-              </Col>
-              <Col>
-                <TouchableHighlight onPress={() => this.props.navigation.navigate('Members')}>
-                  <Card style={styles.gridStyle} onPress={() => this.props.navigation.navigate('Members')}>
-                      <CardItem>
-                        <Body style={styles.textIcon}>
-                          <GwizaIcon name='017-community' style={styles.GridIcon} onPress={()=>NavigationService.navigate('Members')}/>
-                          <Text style= {styles.IconText}>Members</Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                </TouchableHighlight>
-              </Col>
-            </Row>
-          </Grid>
+          <ListItem avatar style={styles.OptionList}  onPress={() => this.props.navigation.navigate('Save')}>
+              <Left>
+                  <GwizaIcon name='004-investment-1' style={{fontSize:35}}/>
+              </Left>
+              <Body>
+                  <Text style={styles.TransTitle}>Save</Text>
+                  <Text note style={styles.TransDate}>Click to Save</Text>
+              </Body>
+          </ListItem>
+          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Myloans')}>
+              <Left>
+                  <GwizaIcon name='009-agreement' style={{fontSize:35}}/>
+              </Left>
+              <Body>
+                  <Text style={styles.TransTitle}>Borrows</Text>
+                  <Text note style={styles.TransDate}>Click for my Loans</Text>
+              </Body>
+          </ListItem>
+          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Members')}>
+              <Left>
+                  <GwizaIcon name='017-community' style={{fontSize:35}}/>
+              </Left>
+              <Body>
+                  <Text style={styles.TransTitle}>Members</Text>
+                  <Text note style={styles.TransDate}>Manage your Group Members</Text>
+              </Body>
+          </ListItem>
+          <ListItem avatar style={styles.OptionList}>
+              <Left>
+                  <GwizaIcon name='024-policy-1' style={{fontSize:35}} onPress={() => this.props.navigation.navigate('Savings')}/>
+              </Left>
+              <Body>
+                  <Text style={styles.TransTitle}>My Account  </Text>
+                  <Text note style={styles.TransDate}>click to manage your Group</Text>
+              </Body>
+          </ListItem>
         </Content>
         <NavBottom/>
       </Container>
@@ -127,6 +96,10 @@ const styles = StyleSheet.create({
     borderWidth:0,
     paddingTop:30,
     paddingBottom:30,
+  },
+  OptionList:{
+    paddingTop:10,
+    paddingBottom:10,
   },
   columnTop2:{
     alignItems: 'center',
@@ -213,7 +186,7 @@ const styles = StyleSheet.create({
     fontWeight:'500',
   },
   Balance:{
-    fontSize:22,
+    fontSize:25,
     color:'#fff',
     textAlign:'center',
     paddingBottom:150,
@@ -248,8 +221,8 @@ const styles = StyleSheet.create({
   },
   profileSection:{
     position:'relative',
-    paddingTop:120,
-    paddingBottom:62,
+    paddingTop:100,
+    paddingBottom:180,
     backgroundColor:'#ff9f00',
   },
   userName:{
@@ -257,6 +230,6 @@ const styles = StyleSheet.create({
     color:'#fff',
     textAlign:'center',
     paddingTop:10,
-    paddingBottom:10,
+    paddingBottom:0,
   },
 });
