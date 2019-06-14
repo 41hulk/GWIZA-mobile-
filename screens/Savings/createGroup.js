@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import {StyleSheet,Image, NativeModules, processColor,TouchableHighlight,Animated}  from 'react-native';
-import { Container, Header, Body, Content,Picker, Form, Item, Input, Label, Button, Text, DatePicker, Icon } from 'native-base';
+import { Container, Header, Body,View, Content,Picker, Form, Item, Input, Label, Button, Text, DatePicker, Icon } from 'native-base';
+import {createIconSetFromFontello, OcticonIcon,MaterialIcons, FontAwesome,Foundation,Entypo,EvilIcon,Feather,IoniconFontAwesome, SimpleLineIcons,Ionicons
+} from '@expo/vector-icons';
+import fontelloConfig from '../../assets/fonts/config.json';
+import Stepper from 'react-native-js-stepper'
+const GwizaIcon = createIconSetFromFontello(fontelloConfig, 'gwizaicons');
 const { StatusBarManager } = NativeModules;
 import NavBottom from '../NavBottom';
-export default class History extends Component {
+import Step1 from '../Savings/step1';
+import Step2 from '../Savings/step1';
+import Step3 from '../Savings/step1';
+
+type Props = {}
+export default class createGroup extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,85 +29,44 @@ export default class History extends Component {
     this.setState({ chosenDate: newDate });
     }
     state={
-        isReady: false
-    }
-    async componentWillMount() {
-        await Expo.Font.loadAsync({
-            'Roboto': require('native-base/Fonts/Roboto.ttf'),
-            'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
-        });
-        this.setState({isReady:true})
-    }
+      isReady: false
+      }
+      async componentWillMount() {
+      await Expo.Font.loadAsync({
+          'Roboto': require('native-base/Fonts/Roboto.ttf'),
+          'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+          'gwizaicons': require('../../assets/fonts/gwizaicons.ttf'),
+      });
+      this.setState({isReady:true})
+      }
   render() {
     if (!this.state.isReady) {
         return <Expo.AppLoading />;
     }
     return (
       <Container>
-        <Content>
-        <Form style={styles.form}>
-            <Item stackedLabel>
-                <Label style={styles.inputLabel}>Group Name</Label>
-                <Input style={{ color: "#000" }}/>
-            </Item>
-            <Item>
-                <Picker
-                mode="dropdown"
-                placeholder="Province"
-                placeholderStyle={{ color: "#2874F0" }}
-                note={false}
-                selectedValue={this.state.selected}
-                onValueChange={this.onValueChange.bind(this)}
-                >
-                <Picker.Item label="Kigali" value="key0" />
-                <Picker.Item label="Southern Province" value="key1" />
-                <Picker.Item label="Northern Province" value="key2" />
-                <Picker.Item label="Western Province" value="key3" />
-                <Picker.Item label="Eastern Province" value="key4" />
-                </Picker>
-            </Item>
-            <Item>
-                <Picker
-                mode="dropdown"
-                placeholder="Disctrict"
-                placeholderStyle={{ color: "#2874F0" }}
-                note={false}
-                selectedValue={this.state.selected}
-                onValueChange={this.onValueChange.bind(this)}
-                >
-                <Picker.Item label="Nyarugenge" value="key0" />
-                <Picker.Item label="Gasabo" value="key1" />
-                <Picker.Item label="Kicukiro" value="key2" />
-                <Picker.Item label="Muhanga" value="key3" />
-                <Picker.Item label="Nyanza" value="key4" />
-                <Picker.Item label="Bugesera" value="key4" />
-                </Picker>
-            </Item>
-            <Item>
-                <Picker
-                mode="dropdown"
-                placeholder="Sector"
-                placeholderStyle={{ color: "#2874F0" }}
-                note={false}
-                selectedValue={this.state.selected}
-                onValueChange={this.onValueChange.bind(this)}
-                >
-                <Picker.Item label="Nyakabanda" value="key0" />
-                <Picker.Item label="Nyamirambo" value="key1" />
-                <Picker.Item label="Remera" value="key2" />
-                <Picker.Item label="Kacyiru" value="key3" />
-                <Picker.Item label="Kimironko" value="key4" />
-                </Picker>
-            </Item>
-            <Item stackedLabel>
-                <Label style={styles.inputLabel}>Account Number</Label>
-                <Input style={{ color: "#000" }}  keyboardType = 'numeric'/>
-            </Item>
-            <Button block bordered light style={styles.saveBtn} onPress={() => alert('save')}>
-                <Text style = {styles.LoginText} autoCapitalize="characters"> Create Group </Text>
-            </Button>
-        </Form>
-        </Content>
+            <Stepper
+            ref={(ref: any) => {
+              this.stepper = ref
+            }}
+            validation={true}
+            activeDotStyle={styles.activeDot}
+            inactiveDotStyle={styles.inactiveDot}
+            showTopStepper={true}
+            showBottomStepper={true}
+            steps={['Step 1', 'Step 2', 'Step 3']}
+            backButtonTitle="BACK"
+            nextButtonTitle="NEXT"
+            activeStepStyle={styles.activeStep}
+            inactiveStepStyle={styles.inactiveStep}
+            activeStepTitleStyle={styles.activeStepTitle}
+            inactiveStepTitleStyle={styles.inactiveStepTitle}
+            activeStepNumberStyle={styles.activeStepNumber}
+            inactiveStepNumberStyle={styles.inactiveStepNumber}>
+            <Step1 />
+            <Step2 />
+            <Step3 />
+          </Stepper>
         <NavBottom/>
       </Container>
     );
@@ -105,6 +74,30 @@ export default class History extends Component {
 }
 
 const styles = StyleSheet.create({
+      activeDot: {
+        backgroundColor: 'grey'
+      },
+      inactiveDot: {
+        backgroundColor: '#ededed'
+      },
+      activeStep: {
+        backgroundColor: 'grey'
+      },
+      inactiveStep: {
+        backgroundColor: '#ededed'
+      },
+      activeStepTitle: {
+        fontWeight: 'bold'
+      },
+      inactiveStepTitle: {
+        fontWeight: 'normal'
+      },
+      activeStepNumber: {
+        color: 'white'
+      },
+      inactiveStepNumber: {
+        color: 'black'
+      },
       Content:{ 
         overflow: 'scroll',
         position:'relative',

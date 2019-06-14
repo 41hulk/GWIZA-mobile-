@@ -379,7 +379,7 @@ const TopLevelNavigator = createStackNavigator({
     },
 },
 {
-  initialRouteName : 'singleSaving'
+  initialRouteName : 'createGroup'
 });
 if (Platform.OS === "android") {
   // removes extra space at top of header on android

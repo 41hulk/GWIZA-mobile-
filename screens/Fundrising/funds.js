@@ -29,14 +29,14 @@ export default class funds  extends Component {
       <Container>
         <Content>
             <Tabs>
-            <Tab  heading="In Progress" activeTabStyle={{backgroundColor:'#690002'}} textStyle={{color:'#000'}} tabStyle={{backgroundColor:'#f8f8f8'}} textStyle={{color:'#000'}}>
+            <Tab  heading="In Progress" activeTabStyle={{backgroundColor:'#690002'}} activeTextStyle={{color:'#fff'}}  tabStyle={{backgroundColor:'#f8f8f8'}} textStyle={{color:'#000'}}  tabBarUnderlineStyle={{ backgroundColor: '#690002' }}>
                 <Item style={styles.searchBar}>
                     <Icon name="ios-search" />
                     <Input placeholder="Search" />
                 </Item>
                 <InProgress />
             </Tab>
-            <Tab heading="Completed" activeTabStyle={{backgroundColor:'#690002'}} textStyle={{color:'#000'}} tabStyle={{backgroundColor:'#f8f8f8'}} textStyle={{color:'#000'}}>
+            <Tab heading="Completed" activeTabStyle={{backgroundColor:'#690002'}} activeTextStyle={{color:'#fff'}}  tabStyle={{backgroundColor:'#f8f8f8'}} textStyle={{color:'#000'}} tabBarUnderlineStyle={{ backgroundColor: '#690002' }}>
                 <Item style={styles.searchBar}>
                     <Icon name="ios-search" />
                     <Input placeholder="Search" />
