@@ -23,6 +23,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "android": {
+      "package": "com.imaginet.gwiza"
+    },
     "assetBundlePatterns": [
       "**/*"
     ],

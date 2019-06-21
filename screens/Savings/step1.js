@@ -42,65 +42,67 @@ export default class step1 extends Component {
     }
     return (
       <Container>
-        <Form style={styles.form}>
-            <Item stackedLabel>
-                <Label style={styles.inputLabel}>Group Name</Label>
-                <Input style={{ color: "#000" }}/>
-            </Item>
-            <Item>
-                <Picker
-                mode="dropdown"
-                placeholder="Province"
-                placeholderStyle={{ color: "#2874F0" }}
-                note={false}
-                selectedValue={this.state.selected}
-                onValueChange={this.onValueChange.bind(this)}
-                >
-                <Picker.Item label="Kigali" value="key0" />
-                <Picker.Item label="Southern Province" value="key1" />
-                <Picker.Item label="Northern Province" value="key2" />
-                <Picker.Item label="Western Province" value="key3" />
-                <Picker.Item label="Eastern Province" value="key4" />
-                </Picker>
-            </Item>
-            <Item>
-                <Picker
-                mode="dropdown"
-                placeholder="Disctrict"
-                placeholderStyle={{ color: "#2874F0" }}
-                note={false}
-                selectedValue={this.state.selected}
-                onValueChange={this.onValueChange.bind(this)}
-                >
-                <Picker.Item label="Nyarugenge" value="key0" />
-                <Picker.Item label="Gasabo" value="key1" />
-                <Picker.Item label="Kicukiro" value="key2" />
-                <Picker.Item label="Muhanga" value="key3" />
-                <Picker.Item label="Nyanza" value="key4" />
-                <Picker.Item label="Bugesera" value="key4" />
-                </Picker>
-            </Item>
-            <Item>
-                <Picker
-                mode="dropdown"
-                placeholder="Sector"
-                placeholderStyle={{ color: "#2874F0" }}
-                note={false}
-                selectedValue={this.state.selected}
-                onValueChange={this.onValueChange.bind(this)}
-                >
-                <Picker.Item label="Nyakabanda" value="key0" />
-                <Picker.Item label="Nyamirambo" value="key1" />
-                <Picker.Item label="Remera" value="key2" />
-                <Picker.Item label="Kacyiru" value="key3" />
-                <Picker.Item label="Kimironko" value="key4" />
-                </Picker>
-            </Item>
-            <Item stackedLabel>
-                <Label style={styles.inputLabel}>Account Number</Label>
-                <Input style={{ color: "#000" }}  keyboardType = 'numeric'/>
-            </Item>
-        </Form>
+        <Content enableOnAndroid>
+          <Form style={styles.form}>
+              <Item stackedLabel>
+                  <Label style={styles.inputLabel}>Group Name</Label>
+                  <Input style={{ color: "#000" }}/>
+              </Item>
+              <Item>
+                  <Picker
+                  mode="dropdown"
+                  placeholder="Province"
+                  placeholderStyle={{ color: "#2874F0" }}
+                  note={false}
+                  selectedValue={this.state.selected}
+                  onValueChange={this.onValueChange.bind(this)}
+                  >
+                  <Picker.Item label="Kigali" value="key0" />
+                  <Picker.Item label="Southern Province" value="key1" />
+                  <Picker.Item label="Northern Province" value="key2" />
+                  <Picker.Item label="Western Province" value="key3" />
+                  <Picker.Item label="Eastern Province" value="key4" />
+                  </Picker>
+              </Item>
+              <Item>
+                  <Picker
+                  mode="dropdown"
+                  placeholder="Disctrict"
+                  placeholderStyle={{ color: "#2874F0" }}
+                  note={false}
+                  selectedValue={this.state.selected}
+                  onValueChange={this.onValueChange.bind(this)}
+                  >
+                  <Picker.Item label="Nyarugenge" value="key0" />
+                  <Picker.Item label="Gasabo" value="key1" />
+                  <Picker.Item label="Kicukiro" value="key2" />
+                  <Picker.Item label="Muhanga" value="key3" />
+                  <Picker.Item label="Nyanza" value="key4" />
+                  <Picker.Item label="Bugesera" value="key4" />
+                  </Picker>
+              </Item>
+              <Item>
+                  <Picker
+                  mode="dropdown"
+                  placeholder="Sector"
+                  placeholderStyle={{ color: "#2874F0" }}
+                  note={false}
+                  selectedValue={this.state.selected}
+                  onValueChange={this.onValueChange.bind(this)}
+                  >
+                  <Picker.Item label="Nyakabanda" value="key0" />
+                  <Picker.Item label="Nyamirambo" value="key1" />
+                  <Picker.Item label="Remera" value="key2" />
+                  <Picker.Item label="Kacyiru" value="key3" />
+                  <Picker.Item label="Kimironko" value="key4" />
+                  </Picker>
+              </Item>
+              <Item stackedLabel>
+                  <Label style={styles.inputLabel}>Account Number</Label>
+                  <Input style={{ color: "#000" }}  keyboardType = 'numeric'/>
+              </Item>
+          </Form>
+        </Content>
       </Container>
     );
   }

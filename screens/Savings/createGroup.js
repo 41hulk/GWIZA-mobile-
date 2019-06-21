@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet,Image, NativeModules, processColor,TouchableHighlight,Animated}  from 'react-native';
+import {StyleSheet,Image, NativeModules, processColor,TouchableHighlight,Animated,Platform,Keyboard}  from 'react-native';
 import { Container, Header, Body,View, Content,Picker, Form, Item, Input, Label, Button, Text, DatePicker, Icon } from 'native-base';
 import {createIconSetFromFontello, OcticonIcon,MaterialIcons, FontAwesome,Foundation,Entypo,EvilIcon,Feather,IoniconFontAwesome, SimpleLineIcons,Ionicons
 } from '@expo/vector-icons';
@@ -39,34 +39,50 @@ export default class createGroup extends Component {
       });
       this.setState({isReady:true})
       }
+      componentWillMount () {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow.bind(this));
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide.bind(this));
+    }
+
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
+    _keyboardDidShow () {
+        this.setState({showFooter: false});
+    }
+
+    _keyboardDidHide () {
+        this.setState({showFooter: true});
+    }
   render() {
     if (!this.state.isReady) {
         return <Expo.AppLoading />;
     }
     return (
       <Container>
-            <Stepper
-            ref={(ref: any) => {
-              this.stepper = ref
-            }}
-            validation={true}
-            activeDotStyle={styles.activeDot}
-            inactiveDotStyle={styles.inactiveDot}
-            showTopStepper={true}
-            showBottomStepper={true}
-            steps={['Step 1', 'Step 2', 'Step 3']}
-            backButtonTitle="BACK"
-            nextButtonTitle="NEXT"
-            activeStepStyle={styles.activeStep}
-            inactiveStepStyle={styles.inactiveStep}
-            activeStepTitleStyle={styles.activeStepTitle}
-            inactiveStepTitleStyle={styles.inactiveStepTitle}
-            activeStepNumberStyle={styles.activeStepNumber}
-            inactiveStepNumberStyle={styles.inactiveStepNumber}>
-            <Step1 />
-            <Step2 />
-            <Step3 />
-          </Stepper>
+          <Stepper
+              ref={(ref: any) => {
+                this.stepper = ref
+              }}
+              validation={true}
+              activeDotStyle={styles.activeDot}
+              inactiveDotStyle={styles.inactiveDot}
+              showTopStepper={true}
+              showBottomStepper={true}
+              steps={['Step 1', 'Step 2', 'Step 3']}
+              backButtonTitle="BACK"
+              nextButtonTitle="NEXT"
+              activeStepStyle={styles.activeStep}
+              inactiveStepStyle={styles.inactiveStep}
+              activeStepTitleStyle={styles.activeStepTitle}
+              inactiveStepTitleStyle={styles.inactiveStepTitle}
+              activeStepNumberStyle={styles.activeStepNumber}
+              inactiveStepNumberStyle={styles.inactiveStepNumber}>
+              <Step1 />
+              <Step2 />
+              <Step3 />
+            </Stepper>
         <NavBottom/>
       </Container>
     );

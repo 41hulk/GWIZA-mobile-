@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 56214,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://zf-jyf.ericku.gwizamobile.exp.direct",
   "packagerNgrokUrl": "https://packager.zf-jyf.ericku.gwizamobile.exp.direct",
-  "ngrokPid": 56232
+  "ngrokPid": 57291
 }
