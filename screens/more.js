@@ -47,7 +47,7 @@ export default class More extends Component {
                   <Text note style={styles.TransDate}>Click for my Investments</Text>
               </Body>
           </ListItem>
-          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Settings')}>
+          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Settinggits')}>
               <Left>
                   <GwizaIcon name='024-policy-1' style={{fontSize:35}}/>
               </Left>

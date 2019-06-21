@@ -61,7 +61,7 @@ export default class Home extends React.Component {
             </Col>
             <Col style={styles.column2}>
             <GwizaIcon name='022-pay-1' style={styles.GridIcon} onPress={() => this.props.navigation.navigate('Paybills')}/>
-              <Text style= {styles.IconText}>Pay Bills</Text>
+              <Text style= {styles.IconText}>Pay</Text>
             </Col>
           </Row>
           <Row style={styles.Row}>
