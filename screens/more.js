@@ -29,7 +29,7 @@ export default class More extends Component {
     return (
       <Container>
         <Content>
-          <ListItem avatar style={styles.OptionList}  onPress={() => this.props.navigation.navigate('Save')}>
+          <ListItem avatar style={styles.OptionList}  onPress={() => this.props.navigation.navigate('Paybills')}>
               <Left>
                   <GwizaIcon name='022-pay-1' style={{fontSize:35}}/>
               </Left>
@@ -38,7 +38,7 @@ export default class More extends Component {
                   <Text note style={styles.TransDate}>Click to pay</Text>
               </Body>
           </ListItem>
-          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Myloans')}>
+          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Investments')}>
               <Left>
                   <GwizaIcon name='004-investment-1' style={{fontSize:35}}/>
               </Left>
@@ -47,7 +47,7 @@ export default class More extends Component {
                   <Text note style={styles.TransDate}>Click for my Investments</Text>
               </Body>
           </ListItem>
-          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Members')}>
+          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Settings')}>
               <Left>
                   <GwizaIcon name='024-policy-1' style={{fontSize:35}}/>
               </Left>
