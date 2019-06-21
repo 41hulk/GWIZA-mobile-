@@ -48,7 +48,7 @@ export default class LockScreen extends React.Component {
                 <Text style={styles.locklabelText}>Please Enter Your PIN</Text>
               </Body>
               <View style={styles.Content}>
-                <PinView onComplete={this.onComplete} pinLength={5} inputActiveBgColor="#fff" />
+                <PinView onComplete={this.onComplete} pinLength={5} inputActiveBgColor="#fff" buttonBgColor="#0000001c"	 buttonTextColor="#fff" />
               </View>
           </View>
       </View>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     top:0,
     right:0,
     left:0,
-    bottom:10,
+    bottom:80,
   },
   copyrightText:{
     flex:1,

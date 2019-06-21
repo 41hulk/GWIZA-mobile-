@@ -5,6 +5,7 @@ import {createIconSetFromFontello,MaterialIcons, FontAwesome,Feather,} from '@ex
 import fontelloConfig from '../assets/fonts/config.json';
 const GwizaIcon = createIconSetFromFontello(fontelloConfig, 'gwizaicons');
 import NavigationService from '../NavigationService';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default class NavBottom extends React.Component {
     render() {
@@ -27,14 +28,9 @@ export default class NavBottom extends React.Component {
                 <Text style={{color:'#fff',fontSize:9.1}}>Fundraise</Text>
                 </Button>
                 <Button vertical style={{backgroundColor:'#f39400'}}
-                onPress={()=>NavigationService.navigate('Paybills')}>
-                <GwizaIcon name='022-pay-1' style={styles.GridIcon} size={22} style={{color:'#fff'}}/>
-                <Text style={{color:'#fff',fontSize:9.1}}>Pay</Text>
-                </Button>
-                <Button vertical style={{backgroundColor:'#f39400'}} 
-                onPress={()=>NavigationService.navigate('Settings')}>
-                <MaterialIcons name="settings" size={22} style={{color:'#fff'}}/>
-                <Text style={{color:'#fff',fontSize:9.1}}>Settings</Text>
+                onPress={()=>NavigationService.navigate('More')}>
+                <MaterialCommunityIcons name="google-circles-extended" size={22} style={{color:'#fff'}}/>
+                <Text style={{color:'#fff',fontSize:9.1}}>More</Text>
                 </Button>
             </FooterTab>
         </Footer>

@@ -10,7 +10,7 @@ import MaterialInitials from 'react-native-material-initials/native';
 import NavigationService from '../../NavigationService';
 const { StatusBarManager } = NativeModules;
 import NavBottom from '../NavBottom';
-export default class Home extends Component {
+export default class singleGroup extends Component {
   state={
     isReady: false
   }
