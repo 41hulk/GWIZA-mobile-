@@ -220,7 +220,7 @@ export default class SingleFunds extends Component {
                 </ListItem>
             </List>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

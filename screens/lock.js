@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { StackNavigator,TabNavigator,} from "react-navigation";
 import {StyleSheet,Image,Alert,NativeModules, processColor,TouchableHighlight,Animated}  from 'react-native';
+import {createIconSetFromFontello,MaterialIcons, FontAwesome,Feather,} from '@expo/vector-icons';
 import { Container, Header, Title, Content, Footer,Item, FooterTab, Button,View, Left, Right, Body, Icon, Text } from 'native-base';
 import PhoneInput from 'react-native-phone-input';
 import PinView from 'react-native-pin-view';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import { Row } from 'react-native-easy-grid';
 export default class LockScreen extends React.Component {
   static navigationOptions = {
     header: null
@@ -40,32 +43,35 @@ export default class LockScreen extends React.Component {
       return <Expo.AppLoading />;
     }
     return (
-      <View style={styles.container}>
+      <View style={styles.pageContent}>
         <Header androidStatusBarColor="#690002" iosBarStyle="light-content" style={{display:'none'}}/>
-            <View style = {styles.pageContent}>
-              <Body>
-                <Image style={styles.logo}  source={require('../assets/images/logo-white.png')} disabled='false'/>
-                <Text style={styles.locklabelText}>Please Enter Your PIN</Text>
-              </Body>
-              <View style={styles.Content}>
-                <PinView onComplete={this.onComplete} pinLength={5} inputActiveBgColor="#fff" buttonBgColor="#0000001c"	 buttonTextColor="#fff" />
-              </View>
-          </View>
+        <View style={styles.lockView}>
+            <Body>
+              <MaterialCommunityIcons name="lock" size={35} style={styles.iconLock}/>
+              <Text style={styles.locklabelText}>Please Enter Your PIN</Text>
+            </Body>
+        </View>
+        <View style={styles.Content}>
+          <PinView onComplete={this.onComplete} pinLength={5} inputActiveBgColor="#fff" buttonBgColor="#0000001c"	 buttonTextColor="#fff" />
+        </View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#f39400',
     alignItems: 'center',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  Content:{ 
+  Content:{
     overflow: 'hidden',
     position:'relative',
+    bottom:0,
+    top:30,
+  },
+  upperContent:{
   },
   logo:{
     justifyContent:'center',
@@ -73,57 +79,12 @@ const styles = StyleSheet.create({
     paddingTop:0,
     paddingBottom:0,
   },
-  signupSection:{
-    color:'#fff',
-    textAlign:'center',
-  },
-  signupText:{
-    color:'#fff',
-    fontWeight:'bold',
-  },
   pageContent:{
-    flex:1,
-    position:'absolute',
-    top:0,
-    right:0,
-    left:0,
-    bottom:80,
-  },
-  copyrightText:{
-    flex:1,
-    color:'#fff',
-    bottom:0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-    lineHeight:100,
-  },
-  LoginInput:{
-    position:'relative',
-    margin:40,
-    marginTop:20,
-    marginBottom:20,
-  },
-  LoginText:{
-    color:'#183366',
-  },
-  passwordText:{
-    margin:20,
-  },
-  username:{
-    margin:0,
-  },
-  usernameText:{
-    color:'#fff',
-    borderColor:'transparent',
-    borderRightColor:'#fff',
-    borderWidth:1,
-  },
-  usernameInput:{
-    color:'#fff',
-  },
-  passwordInput:{
-    color:'#fff',
+    flex: 1,
+    backgroundColor: '#f1f1f1',
+    justifyContent : 'center',
+    flexDirection:'column',
+    backgroundColor: '#f39400',
   },
   btnContainer:{
     position:'relative',
@@ -157,7 +118,30 @@ const styles = StyleSheet.create({
   },
   locklabelText:{
     color:'#000',
-    paddingBottom:20,
     fontWeight:'bold',
+    paddingTop:20,
+    paddingBottom:20,
+    justifyContent: 'center',
+  },
+  lockView:{
+    position: 'absolute',
+    top:50,
+    left: '30%',
+    flex:1,
+    flexGrow:1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  iconLock:{
+    color:'#fff',
+    backgroundColor:'#0000001c',
+    padding:20,
+    width:80,
+    height:80,
+    flex:1,
+    borderWidth:1,
+    borderColor:'#fff',
+    borderRadius:50,
+
   }
 });

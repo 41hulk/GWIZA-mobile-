@@ -45,7 +45,7 @@ export default class funds  extends Component {
             </Tab>
         </Tabs>
         </Content>
-        {/* <NavBottom/> */}
+        <NavBottom/>
       </Container>
     );
   }

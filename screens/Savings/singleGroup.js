@@ -70,9 +70,9 @@ export default class singleGroup extends Component {
                   <Text note style={styles.TransDate}>Manage your Group Members</Text>
               </Body>
           </ListItem>
-          <ListItem avatar style={styles.OptionList}>
+          <ListItem avatar style={styles.OptionList} onPress={() => this.props.navigation.navigate('Myaccount')}>
               <Left>
-                  <GwizaIcon name='024-policy-1' style={{fontSize:35}} onPress={() => this.props.navigation.navigate('Savings')}/>
+                  <GwizaIcon name='024-policy-1' style={{fontSize:35}}/>
               </Left>
               <Body>
                   <Text style={styles.TransTitle}>My Account  </Text>

@@ -41,6 +41,7 @@ import LoanDetails from './screens/Savings/LoanDetails';
 import LoanPay from './screens/Savings/LoanPay';
 import createGroup from './screens/Savings/createGroup';
 import More from './screens/more';
+import Myaccount from './screens/Savings/myaccount';
 
 const TopLevelNavigator = createStackNavigator({
     Terms: Terms,
@@ -92,6 +93,16 @@ const TopLevelNavigator = createStackNavigator({
         headerRight: (
           <Feather name="plus" size={25} style={styles.addIcon} onPress={()=>NavigationService.navigate('createGroup')}/>
         ),
+      }),
+    },
+    Myaccount : {
+      screen: Myaccount,
+      navigationOptions: () => ({
+        title: 'My Account',
+        headerTintColor : '#fff',
+        headerStyle : {
+          backgroundColor: '#f39400',
+        },
       }),
     },
     Investments : {
@@ -391,7 +402,7 @@ const TopLevelNavigator = createStackNavigator({
     },
 },
 {
-  initialRouteName : 'Home2'
+  initialRouteName : 'Myaccount'
 });
 if (Platform.OS === "android") {
   // removes extra space at top of header on android

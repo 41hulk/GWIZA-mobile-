@@ -108,6 +108,7 @@ export default class createFund extends Component {
                 </Button>
             </Form>
         </Content>
+        <NavBottom/>
       </Container>
     );
   }
