@@ -6,16 +6,7 @@ This library is React Native wrapper of popular Native charting library [MPAndro
 
 Inspired by [react-native-mp-android-chart](https://github.com/mskec/react-native-mp-android-chart) and [react-native-ios-charts](https://github.com/Jpadilla1/react-native-ios-charts)
 
-React Native Charts Wrapper is built on MPAndroidChart(v3.0.3) & Charts(v3.1.1), support both android & iOS.
-
-## WARNING
-
-As Swift evolves, if you are not using latest Swift compiler, you shouldn't check out master branch. Instead, you should go to release page and pick up whatever suits you.
-
-* Xcode 10.0 / Swift 4.2 (master branch)
-* iOS >= 8.0 (Use as an **Embedded** Framework)
-* tvOS >= 9.0
-* macOS >= 10.11
+React Native Charts Wrapper is built on MPAndroidChart(v3.1.0) & Charts(v3.3.0), support both android & iOS.
 
 
 ### ANDROID 
@@ -69,35 +60,35 @@ Android and IOS have different convention:
 - Complete Form
 
 
-		data : {
-			...
-			dataSets: [
-				{
-					values: [
-						{x: 5, y: 90},
-						{x: 10, y: 130},
-						{x: 50, y: 2000, marker: "eat more"},
-						{x: 80, y: 9000, marker: "eat less"}
-					]
-				},
-				...
-			]
-		}
+        data : {
+            ...
+            dataSets: [
+                {
+                    values: [
+                        {x: 5, y: 90},
+                        {x: 10, y: 130},
+                        {x: 50, y: 2000, marker: "eat more"},
+                        {x: 80, y: 9000, marker: "eat less"}
+                    ]
+                },
+                ...
+            ]
+        }Ï
 
 marker is optional,  if x is omitted, index will be used.
 
 - Simplified Form
 
-	    data: {
-			...
-	        dataSets: [
-	        	{
-	          		values: [5, 40, 77, 81, 43]
-	          	},
-	          	....
-	        ]
-	    }
-
+        data: {
+            ...
+            dataSets: [
+                {
+                    values: [5, 40, 77, 81, 43]
+                },
+                ....
+            ]
+        }
+	
 index will used as x.
 
 
@@ -168,11 +159,6 @@ check Example->TimeSeriesLineChart for details.
 
 ## Notice
 
-**Several settings are removed.**
-
-1. fontFamily & fontStyle
-
-  The font is a little different in android & ios, I don't know how to configure it in js in the same way.
   
 **size of chart**
 

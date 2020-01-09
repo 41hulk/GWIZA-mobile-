@@ -1,7 +1,8 @@
 {
   "hostType": "lan",
   "lanType": "ip",
-  "dev": true,
-  "minify": false,
-  "urlRandomness": "zf-jyf"
+  "dev": false,
+  "minify": true,
+  "urlRandomness": "zf-jyf",
+  "https": false
 }

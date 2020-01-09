@@ -10,7 +10,7 @@
     "@expo/vector-icons": "^8.1.0",
     "@ptomasroos/react-native-multi-slider": "^1.0.0",
     "add": "^2.0.6",
-    "expo": "^31.0.2",
+    "expo": "^33.0.2",
     "native-base": "^2.12.1",
     "or": "^0.2.0",
     "react": "16.5.0",
@@ -41,6 +41,7 @@
     "yarn": "^1.12.3"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.7.4",
     "babel-preset-expo": "^5.0.0"
   },
   "private": true
